@@ -45,8 +45,7 @@
         <!-- Create the wtf quick form from CommentForm -->
         {{ render_form(form, novalidate=True, button_map={"submit": "primary"}) }}
         <div class="comment">
-          <!-- TODO: Show all the comments on a post -->
-
+          <!-- Show all the comments on a post -->
           <ul class="commentList">
             {%if post.comments%}
               {%for comment in post.comments:%}
@@ -61,9 +60,7 @@
                 </li>
               {%endfor%}
             {%endif%}
-
           </ul>
-
         </div>
       </div>
     </div>
