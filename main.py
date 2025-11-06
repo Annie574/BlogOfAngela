@@ -1,4 +1,5 @@
 import os
+from dotenv import load_dotenv
 from datetime import date
 from typing import List
 from flask import Flask, abort, render_template, redirect, url_for, flash
@@ -14,6 +15,8 @@ from werkzeug.security import generate_password_hash, check_password_hash
 # Import your forms from the forms.py
 from forms import CreatePostForm, RegisterForm, LoginForm, CommentForm
 
+
+load_dotenv()
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get("FLASK_KEY")
 ckeditor = CKEditor(app)
